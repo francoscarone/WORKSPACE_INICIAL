@@ -20,6 +20,7 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
     location.href="index.html"
+    let users={};
     users.nombre = profile.getName();
         users.estado ="conectado";
 //---------->
