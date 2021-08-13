@@ -20,7 +20,12 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
     location.href="index.html"
-    document.getElementById("log_user").innerHTML=profile.getName();
+    users.nombre = profile.getName();
+        users.estado ="conectado";
+//---------->
+        localStorage.setItem('usuario',JSON.stringify(users)); //Guardo mi variable de objeto en Local Storage
+        
+        sessionStorage.setItem('usuario',JSON.stringify(users));
   }
 
 function comprobar(){
