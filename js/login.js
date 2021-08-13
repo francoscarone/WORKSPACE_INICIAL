@@ -20,7 +20,7 @@ function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
     location.href="index.html"
-    document.getElementById("log_user").innerHTML=console.log(profile.getName)
+    document.getElementById("log_user").innerHTML=console.log(profile.getName())
   }
 
 function comprobar(){
