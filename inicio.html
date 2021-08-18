@@ -5,8 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="650658290642-ak5alrrchg690835qe6qmbcrmf7r8vv9.apps.googleusercontent.com">
     <title>eMercado - Todo lo que busques está aquí</title>
-
+    <script src="https://apis.google.com/js/platform.js?onload=onload" async defer></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap core CSS -->
@@ -113,8 +115,8 @@
     if (usuario == null){
           location.href="index.html";
       }
-    document.getElementById('campoUser').innerHTML= usuario.nombre;
-    document.getElementById('userConect').innerHTML+=`<button onclick=desconectar()> Desconectar </button>`
+    document.getElementById('campoUser').innerHTML= `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
+    document.getElementById('userConect').innerHTML+=`<button onclick=signOut()> Desconectar </button>`
     </script>
 
 
