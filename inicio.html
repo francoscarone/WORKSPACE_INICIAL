@@ -107,16 +107,18 @@
       </div>
     </footer>
 
+    
     <script>  
     let usuario = JSON.parse( localStorage.getItem("usuario"));
-    if (usuario.estado=='conectado'){
-      document.getElementById('campoUser').innerHTML= usuario.nombre;
-      document.getElementById('userConect').innerHTML+=`<button onclick=desconectar()> Desconectar </button>`
-    } else{
-        location.href="login.html";
-    }
-  </script>
+    if (usuario == null){
+          location.href="index.html";
+      }
+    document.getElementById('campoUser').innerHTML= usuario.nombre;
+    document.getElementById('userConect').innerHTML+=`<button onclick=desconectar()> Desconectar </button>`
+    </script>
 
+
+    <script src="js/login.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>

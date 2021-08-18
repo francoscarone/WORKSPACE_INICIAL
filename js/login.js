@@ -35,18 +35,16 @@ function comprobar(){
 
 }
 
+function desconectar(){
+    localStorage.clear(); ///Borra toooodo el localStorage
+    location.href="index.html"; //De donde esté, no importa dónde, me envía a index.html
 
+}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener('DOMContentLoaded', ()=>{
-    let usuario = JSON.parse(localStorage.getItem("usuario"));
-    if (usuario.estado=='conectado'){
-        //location.href="inicio.html";
-    } else{
-        location.href="login.html";
-    }
-
+    
 });
 
