@@ -34,6 +34,34 @@
 
   <body style="background-color: rgb(69,114,173); background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png')" class="text-center">
 
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '{272471864300658}',
+          cookie     : true,
+          xfbml      : true,
+          version    : '{v11.0}'
+        });
+          
+        FB.AppEvents.logPageView();   
+          
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+  
+
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=272471864300658&autoLogAppEvents=1" nonce="4Nf2fusP"></script>
+
     <div  class="content">
       <div style="background-color: rgb(248,249,250)" class="container ">
         <div style="border: 5px solid rgb(69,114,173);" class="row">
@@ -69,7 +97,7 @@
 
                 <input type="button" onclick=comprobar() class="btn btn-block btn-primary" value="Ingresar">
                 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-          
+                <div class="fb-login-button" data-width="80" data-size="medium" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
             </div>
           </div>
         </div>
