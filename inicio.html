@@ -116,10 +116,11 @@
           location.href="index.html";
       }
     document.getElementById('campoUser').innerHTML= `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
-    document.getElementById('userConect').innerHTML+=`<button onclick=signOut()> Desconectar </button>`
+    document.getElementById('userConect').innerHTML+=`<button onclick=desconectar()> Desconectar </button>`
     </script>
 
 
+    <script src="js/socialLogin/google.js"></script>
     <script src="js/login.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
