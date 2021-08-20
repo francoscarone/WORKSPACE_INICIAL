@@ -10,6 +10,7 @@ function comprobar(){
     }else{
         location.href="inicio.html"
         usuario.nombre = campoUser.value;
+        usuario.imagen = "img/userIcon.png"
         usuario.estado ="conectado";
 //---------->
         localStorage.setItem('usuario',JSON.stringify(usuario)); //Guardo mi variable de objeto en Local Storage
