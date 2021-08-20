@@ -21,7 +21,9 @@ function comprobar(){
 function desconectar(){ 
     signOut();
     localStorage.clear(); ///Borra toooodo el localStorage
+    
     location.href="index.html"; //De donde esté, no importa dónde, me envía a index.html
+    
 }
 
 

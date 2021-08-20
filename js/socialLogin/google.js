@@ -11,7 +11,7 @@ function onSignIn(googleUser) {
 */
     let usuario={};
 
-    usuario.nombre=profile.getGivenName();
+    usuario.nombre=profile.getName();
     usuario.imagen=profile.getImageUrl();
     usuario.estado="conectado";
     localStorage.setItem('usuario',JSON.stringify(usuario));
@@ -28,8 +28,10 @@ function signOut(){
 
 }
 
-function onload(){
+function carga(){
     gapi.load('auth2',function(){
         gapi.auth2.init();
     });
 }
+
+

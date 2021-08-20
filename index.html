@@ -9,9 +9,9 @@
     <meta name="description" content="" />
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="650658290642-ak5alrrchg690835qe6qmbcrmf7r8vv9.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=carga" async defer></script>
 
-
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link
@@ -33,33 +33,6 @@
   </head>
 
   <body style="background-color: rgb(69,114,173); background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png')" class="text-center">
-
-
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '{272471864300658}',
-          cookie     : true,
-          xfbml      : true,
-          version    : '{v11.0}'
-        });
-          
-        FB.AppEvents.logPageView();   
-          
-      };
-    
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "https://connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0&appId=272471864300658&autoLogAppEvents=1" nonce="4Nf2fusP"></script>
 
     <div  class="content">
       <div style="background-color: rgb(248,249,250)" class="container ">
@@ -96,10 +69,11 @@
 
                 <div>
                 <input type="button" onclick=comprobar() class="btn btn-block btn-primary" value="Ingresar">
-                <br>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="30" data-longtitle="true" data-theme="dark" align="center"></div>
-                <span style="color:rgb(69,114,173)">Or</span><br>
-                <div class="fb-login-button" data-width="80" data-height="90" data-size="medium" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+             
+                <span style="color:rgb(69,114,173); font-size: 20px;">Or</span><br>
+                <div class="g-signin2" data-onsuccess="onSignIn" data-width="410" data-height="50" data-longtitle="true" data-theme="dark" style="align-content:center;"></div>
+                
+                
               </div>
               </div>
           </div>
