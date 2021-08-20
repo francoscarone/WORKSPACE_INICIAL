@@ -12,7 +12,7 @@
   <meta name="google-signin-client_id" content="650658290642-ak5alrrchg690835qe6qmbcrmf7r8vv9.apps.googleusercontent.com">
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <script src="https://apis.google.com/js/platform.js?onload=carga" async defer></script>
+  
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -67,19 +67,9 @@
     </div>
   </div>
 
-  <script>  
-    let usuario = JSON.parse( localStorage.getItem("usuario"));
-    if (usuario == null){
-          location.href="index.html";
-      }
-    document.getElementById('campoUser').innerHTML+= `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
-    document.getElementById('hudSuperior').innerHTML+=`<button class="btn btn-secondary" onclick=desconectar()> Desconectar </button>`
-  </script>
-
-
   <script src="js/socialLogin/google.js"></script>
-
- 
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <script src="js/unlogin.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
