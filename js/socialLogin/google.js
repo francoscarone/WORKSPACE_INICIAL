@@ -17,9 +17,9 @@ function onSignIn(googleUser) {
     localStorage.setItem('usuario',JSON.stringify(usuario));
     location.href="inicio.html"
 
-   /* var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
-    */
+   var id_token = googleUser.getAuthResponse().id_token;
+    //console.log("ID Token: " + id_token);
+
 }
 
 function onLoad(){

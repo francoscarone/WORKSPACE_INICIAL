@@ -20,9 +20,10 @@ function comprobar(){
 }
   
 function desconectar(){ 
-    signOut();
+
+    signOut(); //llamamos a la funcion signOut para cerrar sesion de google
+
     localStorage.clear(); ///Borra toooodo el localStorage
-    
     location.href="index.html"; //De donde esté, no importa dónde, me envía a index.html
     
 }

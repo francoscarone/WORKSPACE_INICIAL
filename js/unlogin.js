@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 if (usuario == null){
       location.href="index.html";
 }
-    document.getElementById('campoUser').innerHTML+= `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
+    document.getElementById('userLog').innerHTML+= `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
     document.getElementById('hudSuperior').innerHTML+=`<button class="btn btn-secondary" onclick=desconectar()> Desconectar </button>`
 
 });

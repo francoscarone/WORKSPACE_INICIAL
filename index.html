@@ -7,9 +7,11 @@
 
 
     <meta name="description" content="" />
+
+    <!-- etiquetas meta y script para dar funcionalidad al login de google (OAuth)-->
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="650658290642-ak5alrrchg690835qe6qmbcrmf7r8vv9.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=carga" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
     
     <title>eMercado - Todo lo que busques está aquí</title>
@@ -32,41 +34,43 @@
     
   </head>
 
+
+  <!-- Aqui realizamos nuestro formulario Login -->
+
+  <!-- Fondo estilo textura/trama color azul-->
   <body style="background-color: rgb(69,114,173); background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png')" class="text-center">
 
+    <!-- div contenedor del formulario -->
     <div  class="content">
-      <div style="background-color: rgb(248,249,250)" class="container ">
+      <div style="background-color: rgb(248,249,250)" class="container">
         <div style="border: 5px solid rgb(69,114,173);" class="row">
 
+          <!-- Imagen que se muestra a la izquierda dentro del formulario-->
           <div class="col-md-5">
             <img src="img/login_Image.png" alt="Image" class="img-fluid">
           </div>
 
           <div class="col-md-7 contents">
-            <div style="padding-top: 20px;" class="row justify-content-center">
+            <div style="padding-top: 30px;" class="row justify-content-center">
               
               <div class="col-md-8">
                 <div class="mb-4">
                 <h3 style="color:rgb(69,114,173)"> Ingresar </h3>
               </div>
   
+              <!-- Añadimos los campos de texto usuario y password -->
               <div>
-
                 <div class="form-group first">
                   <input type="text" class="form-control" id="user" placeholder="Ingrese su nombre de usuario">
                 </div>
-
+                <br>
                 <div class="form-group last mb-4">
                   <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">  
                 </div>
                 
-                <div class="d-flex mb-5 align-items-center">
-                  <label class="control control--checkbox mb-0"><span class="caption">Recuerdame</span>
-                    <input type="checkbox">
-                    <div class="control__indicator"></div>
-                  </label>
-                </div>
+              <br>
 
+              <!-- aqui agregamos los botones de Ingresar y el inicio con google-->
                 <div>
                 <input type="button" onclick=comprobar() class="btn btn-block btn-primary" value="Ingresar">
              
