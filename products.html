@@ -15,6 +15,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -30,7 +31,40 @@
       </div>
     </nav>
     <div class="container p-5">
+      <div class="container" align="right">
 
+
+      <!-- div contenedor del input range -->
+
+      <hr>
+      <div class="container">
+        <div class="row">       
+          <div class="col btn-group">
+         <input type="search" id="buscar"><button class="btn btn-dark" onclick="buscar()"> <i class="fas fa-search"></i> </button> 
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          
+            <button class="btn btn-dark" id="ordAsc" onclick="ordenarPrecio();">
+            <i class="fas fa-sort-amount-down-alt"></i> USD</button>
+          
+            <button class="btn btn-dark" id="ordDesc" onclick="ordenarInverso();">
+            <i class="fas fa-sort-amount-down"></i> USD</button>
+          
+          
+            <button class="btn btn-dark" id="ordRel" onclick="ordenarRelevancia();">
+            <i class="fas fa-sort-amount-down"></i>Relevancia</button>
+         
+        </div>
+        <div class="col btn-group">
+          <input type="text" id="valMin" placeholder="Precio Minimo 12000">
+          <input type="text" id="valMax" placeholder="Precio Maximo 16000">
+          <button class="btn btn-dark" onclick="filtrar();">Filtrar</button>
+        </div>
+      </div>
+      </div>
+      <hr>
+      
       <!-- div donde se añadiran los productos-->
       <div id="product-list-contain">
         
