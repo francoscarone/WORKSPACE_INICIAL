@@ -18,7 +18,7 @@ function showProductList(array){
                         <h4 class="mb-1">${producto.name}</h4>
                         <small class="text-muted">${producto.soldCount} artículos</small>
                     </div>
-                    <p class="mb-1">${producto.description}</p>
+                    <p class="mb-1 text-left">${producto.description}</p>
                     <br>
                     <br>
                     <div><p style="float:right;""class="mb-1">Precio: ${producto.currency} ${producto.cost} </p></div> 
@@ -35,12 +35,6 @@ function showProductList(array){
 }
 
 
-function ordenarInverso (){
-    productosArray.sort();
-    productosArray.reverse();
-    showProductList(productosArray);
-};
-
 function ordenarPrecio (){
 
     productosArray.sort((a,b)=>{ 
@@ -49,6 +43,12 @@ function ordenarPrecio (){
     showProductList(productosArray);
 }
 
+
+function ordenarInverso (){
+    productosArray.sort();
+    productosArray.reverse();
+    showProductList(productosArray);
+};
 
 function ordenarRelevancia (){
 
