@@ -9,6 +9,7 @@ input[type="radio"] {
   display: none;
 }
 
+
 label {
   color: rgb(24, 24, 24);
 }
@@ -26,3 +27,23 @@ label:hover ~ label {
 input[type="radio"]:checked ~ label {
   color: orange;
 }
+
+ /* Estilo boton comentar */
+
+ .botonComentar {
+  border-radius: 5px;
+  color: rgb(255, 255, 255) !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 22.6em;
+  background: rgb(52,58,64);
+  border: 2px solid;
+  border-color: rgb(52,58,64);
+  transition: all 1s ease;
+  position: relative;
+}
+.botonComentar:hover {
+  background: rgba(52, 58, 64, 0);
+  color: rgb(0, 0, 0) !important;
+}
+
