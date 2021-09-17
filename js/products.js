@@ -7,7 +7,7 @@ function showProductList(array){
     for(let i = 0; i < array.length; i++){
         let producto = array[i];
         
-        productos += `
+        productos += `<a href= "product-info.html">
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -25,7 +25,7 @@ function showProductList(array){
 
                 </div>
             </div>
-        </div>
+        </div> </a>
         `
 
         document.getElementById("product-list-contain").innerHTML = productos;
@@ -88,6 +88,9 @@ function buscar(){
  document.getElementById("buscar").addEventListener('keyup',()=>{
     buscar();
 });
+
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

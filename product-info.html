@@ -6,13 +6,23 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+
+
+
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="650658290642-ak5alrrchg690835qe6qmbcrmf7r8vv9.apps.googleusercontent.com">
+    
   <title>eMercado - Todo lo que busques está aquí</title>
 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/puntuacion.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,16 +33,54 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="hudSuperior">
+        <a id="userLog" style="color: rgb(245, 245, 245)" class="py-2 d-none d-md-inline-block"></a>
+      </div>
     </div>
   </nav>
+
+  <div class="container p-5" id="info-container">
+  </div>
+
+  <div class="container p-5" id="comentarios"> 
+  </div>
+
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <h2>Haz un comentario:</h2>
+    <div  class="list-group-item">
+      <div class="row">
+        <div class="col-4 col-md-4">
+          <h3 id="name">Nombre: </h3> 
+        </div>
+        <div class="col-8 stars d-flex justify-content-end">
+          <div class="d-flex justify-content-end">
+            <p class="clasificacion">
+              <input id="radio1" type="radio" name="estrellas" value="5"><!--
+              --><label for="radio1"><i class="fas fa-car"></i></label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+              --><label for="radio2"><i class="fas fa-car"></i></label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label for="radio3"><i class="fas fa-car"></i></label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+              --><label for="radio4"><i class="fas fa-car"></i></label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+              --><label for="radio5"><i class="fas fa-car"></i></label>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <textarea id="comentario" cols="122" rows="5"></textarea>
+        </div>
+    
+        <div class="col-6 col-md-4">
+          <button class="btn btn-dark btn-lg" onclick="comentar();">Comentar</button>
+        </div>
+      </div>
     </div>
   </div>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -50,10 +98,21 @@
       <div></div>
     </div>
   </div>
+
+  <script>
+    let usuario = JSON.parse( localStorage.getItem("usuario"));
+    document.getElementById('name').innerHTML += `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.nombre}`
+  </script>
+
+
+  <script src="js/unlogin.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/socialLogin/google.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 </body>
 
 </html>
