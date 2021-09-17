@@ -174,8 +174,9 @@ function showProductInfo(lista){
     }
     // deselecciona todos los radio(estrellas/autos)
     function unselect(){
-        document.querySelectorAll('[Type=radio]').forEach((x) => x.checked=false);
-      }
+        for(i=1 ;i<=5;i++){
+        document.getElementById('radio'+i).checked=false;
+      }}
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
