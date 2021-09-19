@@ -104,7 +104,7 @@ function showProductInfo(lista){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h2 class="mb-1">${comentario.user}</h2>
-                            <h4>${estrellas(comentario.score)}</h4>
+                            <h4>${autosPoints(comentario.score)}</h4>
                         </div>
                         <p class="mb-1 text-left h4">${comentario.description}</p>
                         <br>
@@ -124,17 +124,17 @@ function showProductInfo(lista){
 
     } 
 
-    function estrellas(num){
-        let estrellas= "";
+    function autosPoints(num){
+        let puntos= "";
         for(i=1; i<=5; i++){
             if(i<=num){
-                estrellas+=`<a><i style="color:#ffa500" class="fas fa-car"></i></a>`
+                puntos+=`<a><i style="color:#ffa500" class="fas fa-car"></i></a>`
             }else{
-                estrellas+=`<a><i class="fas fa-car-crash"></i></a>`
+                puntos+=`<a><i class="fas fa-car-crash"></i></a>`
                 
             }
         }
-        return estrellas;
+        return puntos;
     }
 
 
