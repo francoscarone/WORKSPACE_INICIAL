@@ -1,7 +1,8 @@
 let productInfo = [];
 let comentarios = [];
+let relacionados = [];
 
-
+// muestra la informacion de un producto
 function showProductInfo(lista){
         let productos = `
     <hr>
@@ -26,7 +27,7 @@ function showProductInfo(lista){
 		</div>
     <hr>
         <h2>Mas Imagenes</h2>  
-        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
 
                 <ol class="carousel-indicators">
                     <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -81,7 +82,7 @@ function showProductInfo(lista){
             
         </div>
     </div>
-    <hr>
+    <hr>    
      `
     
         document.getElementById("info-container").innerHTML = productos;
@@ -90,7 +91,7 @@ function showProductInfo(lista){
     }   
 
 
-
+    // Muestra los comentarios
     function showComentarios(array){
 
         let comentarios = `<h2>Comentarios:</h2><br>`;
@@ -124,6 +125,27 @@ function showProductInfo(lista){
 
     } 
 
+    // Funcion para mostrar productos relacionados
+    function showRelatedProducts(array){
+        relacionados=``;
+        productInfo.relatedProducts.forEach((relacionado)=>{
+            relacionados+=`
+            <div class="col-md-4">
+              <a href="products.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src=${array[relacionado].imgSrc} alt=${relacionado.description}">
+                <h3 class="m-3">${array[relacionado].name}</h3>
+                <div class="card-body">
+                  <p class="card-text">${array[relacionado].description}</p>
+                </div>
+              </a>
+            </div>
+            `
+        })
+        document.getElementById("related").innerHTML = relacionados;
+    }
+    
+
+    // tranforma puntuacion en autitos
     function autosPoints(num){
         let puntos= "";
         for(i=1; i<=5; i++){
@@ -138,6 +160,7 @@ function showProductInfo(lista){
     }
 
 
+    // recolecta los datos de la caja de comentarios y los agrega un comentario nuevo a los comentarios ya existentes
     function comentar(){
 
         // guardamos el nombre del usuario, su comentario y su puntuacion en variables
@@ -195,6 +218,15 @@ document.addEventListener("DOMContentLoaded", function(e){
             showProductInfo(productInfo);
         }
     });
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            relacionados = resultObj.data;
+            //Muestro los comentarios
+            showRelatedProducts(relacionados);
+        }
+    });
+
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {

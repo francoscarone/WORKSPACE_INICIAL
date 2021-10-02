@@ -7,7 +7,7 @@ function showProductList(array){
     for(let i = 0; i < array.length; i++){
         let producto = array[i];
         
-        productos += `<a href= "product-info.html">
+        productos += `<a href= "product-info.html" class="custom-card">
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
