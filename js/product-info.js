@@ -1,6 +1,6 @@
 let productInfo = [];
 let comentarios = [];
-let relacionados = [];
+let productos = [];
 
 // muestra la informacion de un producto
 function showProductInfo(lista){
@@ -127,9 +127,9 @@ function showProductInfo(lista){
 
     // Funcion para mostrar productos relacionados
     function showRelatedProducts(array){
-        relacionados=``;
+        productos=``;
         productInfo.relatedProducts.forEach((relacionado)=>{
-            relacionados+=`
+            productos+=`
             <div class="col-md-4">
               <a href="products.html" class="card mb-4 shadow-sm custom-card">
                 <img class="bd-placeholder-img card-img-top"  src=${array[relacionado].imgSrc} alt=${relacionado.description}">
@@ -141,7 +141,7 @@ function showProductInfo(lista){
             </div>
             `
         })
-        document.getElementById("related").innerHTML = relacionados;
+        document.getElementById("related").innerHTML = productos;
     }
     
 
@@ -221,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            relacionados = resultObj.data;
+            productos = resultObj.data;
             //Muestro los comentarios
-            showRelatedProducts(relacionados);
+            showRelatedProducts(productos);
         }
     });
 
