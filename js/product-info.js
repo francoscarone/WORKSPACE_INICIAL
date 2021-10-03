@@ -27,7 +27,7 @@ function showProductInfo(lista){
 		</div>
     <hr>
         <h2>Mas Imagenes</h2>  
-        <div id="carouselIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="2000">
+        <div id="carouselIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
 
                 <ol class="carousel-indicators">
                     <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
