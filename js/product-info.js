@@ -8,7 +8,7 @@ function showProductInfo(lista){
     <hr>
     <div class="container-fluid" bis_skin_checked="1">
 	    <div class="row" bis_skin_checked="1">
-		    <div class="col-md-5" bis_skin_checked="1">
+		    <div class="col-md-5 img-hover-zoom--slowmo" bis_skin_checked="1">
 			    <img class="img-thumbnail" alt="${lista.description}" src="${lista.images[0]}">
 		    </div>
 		    <div class="col-md-7" bis_skin_checked="1">
@@ -36,7 +36,7 @@ function showProductInfo(lista){
                     <li data-target="#carouselIndicators" data-slide-to="3"></li>
                 </ol>
 
-            <div class="carousel-inner">
+            <div class="carousel-inner img-hover-zoom--slowmo">
 
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="${lista.images[1]}" alt="First slide">
@@ -72,11 +72,11 @@ function showProductInfo(lista){
             </div>
 
             <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-                <span style="background-color:rgba(0, 0, 0, 0.5);border-radius:30%/50%;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span style="background-color:rgba(0, 0, 0);border-radius:30%/50%;" class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-                <span style="background-color:rgba(0, 0, 0, 0.5);border-radius:30%/50%;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span style="background-color:rgba(0, 0, 0);border-radius:30%/50%;" class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
             
@@ -131,7 +131,7 @@ function showProductInfo(lista){
         productInfo.relatedProducts.forEach((relacionado)=>{
             
             relProductos+=`
-            <div class="col-md-4">
+            <div class="col-md-4 img-hover-zoom-color">
               <a href="products.html" class="card mb-4 shadow-sm custom-card">
                 <img class="bd-placeholder-img card-img-top"  src=${array[relacionado].imgSrc} alt=${array[relacionado].description}">
                 <h3 class="m-3">${array[relacionado].name}</h3>

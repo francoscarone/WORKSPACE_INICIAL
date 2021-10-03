@@ -174,7 +174,7 @@ input[type="radio"]:checked ~ label {
 
  .botonComentar {
   border-radius: 5px;
-  color: rgb(255, 255, 255) !important;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   font-weight: 500;
   padding: 0.5em 22.6em;
@@ -186,17 +186,40 @@ input[type="radio"]:checked ~ label {
 }
 .botonComentar:hover {
   background: rgba(52, 58, 64, 0);
-  color: rgb(0, 0, 0) !important;
+  color: rgb(0, 0, 0);
+  
 }
 
 /* ESTILOS PARA EL MENU DE USUARIO DESPLEGABLE */
-
-
 
 .dropDownOP:hover{
   color: #000;
   background-color: #757677b7;
   border-radius: 5px;
+  transform: scale(1.1);
+  transition: all 1s ease;
+}
+/* Estilo para imagen del informacion de prodcto */
+.img-hover-zoom--slowmo img {
+  transform-origin: 50% 65%;
+  transition: transform 3s ease-in-out;
+}
+
+/* The Transformation */
+.img-hover-zoom--slowmo:hover img {
+  filter: brightness(100%);
+  transform: scale(1.1);
 }
 
 
+/* Estilos de transformacion para ProductsRelated */
+.img-hover-zoom-color img {
+  transition: transform .2s, filter 1.1s ease-in-out;
+  filter: grayscale(100%);
+}
+
+/* The Transformation */
+.img-hover-zoom-color:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
