@@ -1,4 +1,4 @@
-let productInfo = [];
+let productInfo = {};
 let comentarios = [];
 let productos = [];
 
@@ -127,12 +127,13 @@ function showProductInfo(lista){
 
     // Funcion para mostrar productos relacionados
     function showRelatedProducts(array){
-        productos=``;
+        let relProductos=``;
         productInfo.relatedProducts.forEach((relacionado)=>{
-            productos+=`
+            
+            relProductos+=`
             <div class="col-md-4">
               <a href="products.html" class="card mb-4 shadow-sm custom-card">
-                <img class="bd-placeholder-img card-img-top"  src=${array[relacionado].imgSrc} alt=${relacionado.description}">
+                <img class="bd-placeholder-img card-img-top"  src=${array[relacionado].imgSrc} alt=${array[relacionado].description}">
                 <h3 class="m-3">${array[relacionado].name}</h3>
                 <div class="card-body">
                   <p class="card-text">${array[relacionado].description}</p>
@@ -141,7 +142,7 @@ function showProductInfo(lista){
             </div>
             `
         })
-        document.getElementById("related").innerHTML = productos;
+        document.getElementById("related").innerHTML = relProductos;
     }
     
 
