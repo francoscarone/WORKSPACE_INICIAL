@@ -199,13 +199,12 @@ input[type="radio"]:checked ~ label {
   transform: scale(1.1);
   transition: all 1s ease;
 }
-/* Estilo para imagen del informacion de prodcto */
+/* Estilo para transformacion de imagen del informacion de producto */
 .img-hover-zoom--slowmo img {
   transform-origin: 50% 65%;
   transition: transform 3s ease-in-out;
 }
 
-/* The Transformation */
 .img-hover-zoom--slowmo:hover img {
   filter: brightness(100%);
   transform: scale(1.1);
@@ -218,7 +217,6 @@ input[type="radio"]:checked ~ label {
   filter: grayscale(100%);
 }
 
-/* The Transformation */
 .img-hover-zoom-color:hover img {
   filter: grayscale(0);
   transform: scale(1.1);
