@@ -34,7 +34,8 @@ function showCarrito(lista){
                 </div>
             </div>
               </div>
-              <div class="d-flex flex-row align-items-center">
+              <div class="d-flex justify-content-between information">
+              
                 <div class="ml-2">
                     <span class="font-weight-bold d-block">Cantidad</span>
                     <span class="d-block font-weight-bold"><input id="cantidad${i}"type="number" min=0 max=10 value=0 onchange="calSubtotal(${i},${articulo.unitCost});"></span>
@@ -49,6 +50,7 @@ function showCarrito(lista){
                       <span>USD </span><span class="d-block font-weight-bold" id="subtotal${i}">${0}</span>
                     </div>
                    </div>
+                
               </div>
             </div>
     `
