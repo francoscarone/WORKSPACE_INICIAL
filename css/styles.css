@@ -161,8 +161,8 @@ label {
   unicode-bidi: bidi-override;
 }
 
-label:hover,
-label:hover ~ label {
+.autos:hover,
+.autos:hover ~ label {
   color: orange;
 }
 
