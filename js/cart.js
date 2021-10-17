@@ -1,9 +1,11 @@
 carrito = {};
-let subTotal_Final=0;
+
 function showCarrito(lista){
     let tabla = ``;
     for(let i = 0; i < lista.articles.length; i++){
         let articulo = lista.articles[i];
+
+        // convierto el precio a dolares
         if(articulo.currency=="UYU"){
             articulo.currency="USD";
             articulo.unitCost=articulo.unitCost/40;
@@ -62,7 +64,7 @@ function showCarrito(lista){
 
 function calSubtotal(indice,precio){   
 
-  // cAMBIAR EL VALOR DEL CARRITO AL SUMAR O RESTAR UNIDADES
+  // CAMBIAR EL VALOR DEL SUBTOTAL AL SUMAR O RESTAR UNIDADES
     cantidad=document.getElementById("cantidad"+indice).value;
     
     subtotal = precio * cantidad;
@@ -73,15 +75,24 @@ function calSubtotal(indice,precio){
 }
 
 function calcCostoEnvio(){
+
+  // declaro variables para totales y costo de envio
   let total_Final=0;
   let subTotal_Final=0;
   let costoEnvio=0
+
+  // recorro el array de articulos y extraigo su subtotal con respecto a la cantidad
   for (let index = 0; index < carrito.articles.length; index++) {
     subTotal_Final += parseFloat(document.getElementById("subtotal"+index).innerHTML)  
   }
+
+  // calculo el subtotal final y lo agrego a la pagina
   document.getElementById("subTotal-final").innerText ="USD "+ subTotal_Final.toFixed(2)
 
+  // almaceno los tipos de envio en un array
   let envio = document.getElementsByName("card");
+
+  // analizo el estado de los radio, si estan checkeados aplico el importe seleccionado
     if(envio[0].checked){
       costoEnvio=(subTotal_Final*0.15).toFixed(2)
       document.getElementById("costo-envio").innerText="USD "+ costoEnvio
@@ -93,6 +104,8 @@ function calcCostoEnvio(){
       costoEnvio = (subTotal_Final*0.05).toFixed(2)
       document.getElementById("costo-envio").innerText="USD "+ costoEnvio
     }
+
+    // calculo el total final tomando el subtotal + el costo de envio
     total_Final = (parseFloat(subTotal_Final)+parseFloat(costoEnvio)).toFixed(2);
     document.getElementById("total-cost").innerText="USD "+ total_Final;
 }
