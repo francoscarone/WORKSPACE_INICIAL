@@ -103,7 +103,7 @@ function comprar(){
     html: '<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4eth4jy9.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"    autoplay></lottie-player>',
     title: 'Compra realizada, Gracias!',
     showConfirmButton: false,
-    timer: 2500
+    timer: 3000
   })
 }
 
