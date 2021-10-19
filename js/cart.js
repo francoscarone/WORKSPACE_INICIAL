@@ -40,7 +40,7 @@ function showCarrito(lista){
               
                 <div class="ml-2">
                     <span class="font-weight-bold d-block">Cantidad</span>
-                    <span class="d-block font-weight-bold"><input id="cantidad${i}"type="number" min=0 max=10 value=0 onchange="calSubtotal(${i},${articulo.unitCost});"></span>
+                    <span class="d-block font-weight-bold"><input id="cantidad${i}" type="number" min=0 max=10 value=${articulo.count} onchange="calSubtotal(${i},${articulo.unitCost});"></span>
                   </div>
                   <div class="ml-2">
                     <span class="font-weight-bold d-block">Precio Unitario</span>
@@ -49,7 +49,7 @@ function showCarrito(lista){
                   <div class="ml-2">
                     <span class="font-weight-bold d-block">Sub total</span>
                     <div class="d-flex justify-content-between information">
-                      <span>USD </span><span class="d-block font-weight-bold" id="subtotal${i}">${0}</span>
+                      <span>USD </span><span class="d-block font-weight-bold" id="subtotal${i}">${articulo.count * articulo.unitCost}</span>
                     </div>
                    </div>
                 
@@ -79,7 +79,7 @@ function calcCostoEnvio(){
   // declaro variables para totales y costo de envio
   let total_Final=0;
   let subTotal_Final=0;
-  let costoEnvio=0
+  let costoEnvio=0;
 
   // recorro el array de articulos y extraigo su subtotal con respecto a la cantidad
   for (let index = 0; index < carrito.articles.length; index++) {
@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             carrito = resultObj.data;
             //Muestro los comentarios
             showCarrito(carrito);
+            calcCostoEnvio();
         }
     });
 });
