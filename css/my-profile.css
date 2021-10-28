@@ -1,0 +1,43 @@
+
+.profile-img {
+    border-radius: 50%;
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    display: block;
+  }
+
+  .edit-camp{
+    border: none;
+    background-color: transparent;
+    margin-left: 1%;
+  }
+
+  .center {
+    margin-bottom:10%;
+    margin-top: 10%;
+    display: block;
+}
+.centerButton{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.fileInput{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  display: block;
+}
+.edit{
+  color: rgb(23,162,184);
+}
+.nameUser{
+  border-radius: 5%;
+  margin-top: 2%;
+  background-color:rgb(23,162,184);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: aliceblue;
+}

@@ -10,9 +10,11 @@ function onSignIn(googleUser) {
     The ID token you need to pass to your backend:
 */
     let usuario={};
-
-    usuario.nombre=profile.getName();
+    usuario.username=profile.getName();
+    usuario.nombre=getGivenName();
     usuario.imagen=profile.getImageUrl();
+    usuario.email=profile.getEmail();
+    usuario.apellido=profile.getFamilyName();
     usuario.estado="conectado";
     localStorage.setItem('usuario',JSON.stringify(usuario));
     location.href="inicio.html"
