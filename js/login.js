@@ -5,12 +5,13 @@ function comprobar(){
     let campoPass = document.getElementById("password");
     let usuario = {};
 
+
     if (campoUser.value.trim()==='' || campoPass.value.trim()===''){
         alert("Debe completar los campos");
     }else{
         location.href="inicio.html"
         usuario.username = campoUser.value;
-        usuario.password = campoPass.value;
+        usuario.password = md5(campoPass.value);
         usuario.imagen = "img/userIcon.png"
         usuario.estado ="conectado";
 //---------->

@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         <div class="row">
           <!-- imagen -->
           <div class="col-sm-5 card border-info mb-3">
+          <h3 class="text-center nameUser">${usuario.username}</h3>
             <div class="img-fluid">
-            <h3 class="text-center nameUser">${usuario.nombre}</h3>
               <img class="profile-img" id="profileImage" src="${usuario.imagen}" alt="Card image cap">
               <div>
                 <input type="file" class="fileInput" onchange="previewFile()">
@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
       <div class="row">
         <!-- imagen -->
         <div class="col-sm-5 card border-info mb-3">
+        <h3 class="text-center nameUser">${usuario.username}</h3>
           <div class="img-fluid">
-          <h3 class="text-center nameUser">${usuario.username}</h3>
             <img class="profile-img" id="profileImage" src="${usuario.imagen}" alt="Card image cap">
             <div>
                 <input type="file" class="fileInput" onchange="previewFile()">
@@ -156,6 +156,12 @@ function previewFile() {
   let file    = document.querySelector('input[type=file]').files[0];
   let reader  = new FileReader();
 
+  preview.onchange= function(){
+    if(this.files[0].size>2097152){
+      alert("El tamaño de archivo es muy grande");
+      this.value="";
+    }
+  }
   reader.onloadend = function () {
     preview.src = reader.result; 
     usuario.imagen = reader.result;
