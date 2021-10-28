@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
           <div class="col-sm-7 card border-info mb-3">
             <div class="card-body text-info center">
               <div class="row">
+                <div class="col-sm-3"> Usuario </div><div class="col-sm-9 mb-3"><input id="usernamePerfil" type="text" style="width: 80%;" disabled><button class="edit-camp" onclick="habilitar('usernamePerfil');"><i class="fas fa-edit edit"></i></button></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"> Contraseña </div><div class="col-sm-9 mb-3"><input id="passwordPerfil" type="password" style="width: 80%;" disabled><button class="edit-camp" onclick="habilitar('passwordPerfil');"><i class="fas fa-edit edit"></i></button></div>
+              </div>
+              <hr>
+              <div class="row">
                 <div class="col-sm-3"> Nombre </div><div class="col-sm-9 mb-3"><input id="nombrePerfil" type="text" placeholder="${usuario.nombre}" style="width: 80%;" disabled><button class="edit-camp" onclick="habilitar('nombrePerfil');"><i class="fas fa-edit edit"></i></button></div>
               </div>
               <div class="row">
@@ -69,6 +76,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
         <!-- datos del usuario -->
         <div class="col-sm-7 card border-info mb-3">
           <div class="card-body text-info center">
+            <div class="row">
+              <div class="col-sm-3"> Usuario </div><div class="col-sm-9 mb-3"><input id="usernamePerfil" type="text" style="width: 80%;" disabled></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"> Contraseña </div><div class="col-sm-9 mb-3"><input id="passwordPerfil" type="text" style="width: 80%;" disabled></div>
+            </div>
+            <hr>
             <div class="row">
               <div class="col-sm-3"> Nombre </div><div class="col-sm-9 mb-3"><input id="nombrePerfil" type="text" placeholder="Ingrese su nombre" style="width: 80%;"></div>
             </div>
@@ -117,8 +131,8 @@ function cargarDatos(){
 function guardarDatos(){
   let usuario = JSON.parse( localStorage.getItem("usuario"));
 
-    // document.getElementById("usernamePerfil").value=usuario.username
-    // document.getElementById("passwordPerfil").value=usuario.password
+    document.getElementById("usernamePerfil").value=usuario.username
+    document.getElementById("passwordPerfil").value=usuario.password
 
     usuario.nombre = document.getElementById("nombrePerfil").value
     usuario.apellido = document.getElementById("apellidoPerfil").value
