@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
             <div class="img-fluid">
             <h3 class="text-center nameUser">${usuario.nombre}</h3>
               <img class="profile-img" id="profileImage" src="${usuario.imagen}" alt="Card image cap">
-                <input type="file" onchange="previewFile()">
+              <div>
+                <input type="file" class="fileInput" onchange="previewFile()">
+                </div>
               <br>
               <br>
             </div>
@@ -60,12 +62,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
         <!-- imagen -->
         <div class="col-sm-5 card border-info mb-3">
           <div class="img-fluid">
-          <h3 class="text-center nameUser">${usuario.nombre}</h3>
+          <h3 class="text-center nameUser">${usuario.username}</h3>
             <img class="profile-img" id="profileImage" src="${usuario.imagen}" alt="Card image cap">
-            <div class="custom-file">
-              <input type="file fileInput" onchange="previewFile()" class="custom-file-input" lang="es">
-              <label class="custom-file-label fileInput" for="customFileLang">Seleccionar Archivo</label>
-            </div>
+            <div>
+                <input type="file" class="fileInput" onchange="previewFile()">
+                </div>
             <br>
             <br>
           </div>
@@ -74,26 +75,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
         <div class="col-sm-7 card border-info mb-3">
           <div class="card-body text-info center">
             <div class="row">
-              <div class="col-sm-3"> Usuario </div><div class="col-sm-9 mb-3"><input id="usernamePerfil" type="text" style="width: 80%;" disabled></div>
+              <div class="col-sm-3"> Usuario </div><div class="col-sm-9 mb-3"><input id="usernamePerfil" type="text" style="width: 90%;" disabled></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Contraseña </div><div class="col-sm-9 mb-3"><input id="passwordPerfil" type="text" style="width: 80%;" disabled></div>
+              <div class="col-sm-3"> Contraseña </div><div class="col-sm-9 mb-3"><input id="passwordPerfil" type="password" style="width: 90%;" disabled></div>
             </div>
             <hr>
             <div class="row">
-              <div class="col-sm-3"> Nombre </div><div class="col-sm-9 mb-3"><input id="nombrePerfil" type="text" placeholder="Ingrese su nombre" style="width: 80%;"></div>
+              <div class="col-sm-3"> Nombre </div><div class="col-sm-9 mb-3"><input id="nombrePerfil" type="text" placeholder="Ingrese su nombre" style="width: 90%;"></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Apellido </div><div class="col-sm-9 mb-3"><input id="apellidoPerfil" type="text" placeholder="Ingrese su apellido" style="width: 80%;"></div>
+              <div class="col-sm-3"> Apellido </div><div class="col-sm-9 mb-3"><input id="apellidoPerfil" type="text" placeholder="Ingrese su apellido" style="width: 90%;"></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Email </div><div class="col-sm-9 mb-3"><input id="emailPerfil" type="email" placeholder="Ingrese un email" style="width: 80%;"></div>
+              <div class="col-sm-3"> Email </div><div class="col-sm-9 mb-3"><input id="emailPerfil" type="email" placeholder="Ingrese un email" style="width: 90%;"></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Edad </div><div class="col-sm-9 mb-3"><input id="edadPerfil" type="number" placeholder="Edad" style="width: 80%;"></div>
+              <div class="col-sm-3"> Edad </div><div class="col-sm-9 mb-3"><input id="edadPerfil" type="number" placeholder="Edad" style="width: 90%;"></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Telefono </div><div class="col-sm-9 mb-3"><input id="telefonoPerfil" type="tel" placeholder="000 000 000" style="width: 80%;"></div>
+              <div class="col-sm-3"> Telefono </div><div class="col-sm-9 mb-3"><input id="telefonoPerfil" type="tel" placeholder="000 000 000" style="width: 90%;"></div>
             </div>
             <div class="row">
               <div class="col-sm-12"><button type="button" class="btn btn-info centerButton" style="width: 90%;" onclick="guardarDatos();">Guardar Datos</button></div>
@@ -102,6 +103,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         </div>
       </div>`
       document.getElementById("perfil").innerHTML= perfilCargado
+    
+      document.getElementById("usernamePerfil").value=usuario.username
+      document.getElementById("passwordPerfil").value=usuario.password
     }
     
 });
@@ -114,6 +118,7 @@ function habilitar(id){
 
 function cargarDatos(){
   let usuario = JSON.parse( localStorage.getItem("usuario"));
+
   document.getElementById("usernamePerfil").value=usuario.username
   document.getElementById("passwordPerfil").value=usuario.password
 
@@ -124,7 +129,11 @@ function cargarDatos(){
   document.getElementById("telefonoPerfil").value = usuario.telefono 
   document.getElementById("profileImage").src = usuario.imagen
 }
-
+function primerPerfil(){
+  let usuario = JSON.parse( localStorage.getItem("usuario"));
+  document.getElementById("usernamePerfil").value=usuario.username
+  document.getElementById("passwordPerfil").value=usuario.password
+}
 function guardarDatos(){
   let usuario = JSON.parse( localStorage.getItem("usuario"));
 
