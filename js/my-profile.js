@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             <div class="img-fluid">
             <h3 class="text-center nameUser">${usuario.nombre}</h3>
               <img class="profile-img" id="profileImage" src="${usuario.imagen}" alt="Card image cap">
-              <div class="custom-file">
-                <input type="file fileInput" onchange="previewFile()" class="custom-file-input" lang="es">
-                <label class="custom-file-label fileInput" for="customFileLang">Seleccionar Archivo</label>
-              </div>
+                <input type="file" onchange="previewFile()">
               <br>
               <br>
             </div>

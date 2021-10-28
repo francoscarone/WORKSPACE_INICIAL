@@ -11,7 +11,7 @@ function onSignIn(googleUser) {
 */
     let usuario={};
     usuario.username=profile.getName();
-    usuario.nombre=getGivenName();
+    usuario.nombre=profile.getGivenName();
     usuario.imagen=profile.getImageUrl();
     usuario.email=profile.getEmail();
     usuario.apellido=profile.getFamilyName();
