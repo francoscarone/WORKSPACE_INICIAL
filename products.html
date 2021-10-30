@@ -15,25 +15,43 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="dropdown">
-          <div class="dropdown-toggle dropDownOP" style="padding: 0 20px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <a id="userLog" style="color: rgb(245, 245, 245)" class="py-2 d-none d-md-inline-block"></a>
-          </div>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" href="cart.html">Mi carrito</a>
-            <a class="dropdown-item" href="#" onclick="desconectar();">Desconectar</a>
-          </div>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto container justify-content-between">
+          <li class="nav-item active">
+            <a class="nav-link" style="color: rgb(245, 245, 245)" href="inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: rgb(245, 245, 245)" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" style="color: rgb(245, 245, 245)" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: rgb(245, 245, 245)" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            
+            
+            <a id="userLog" style="color: rgb(245, 245, 245)" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a class="dropdown-item" href="#" onclick="desconectar();">Desconectar</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
     <div class="container p-5">
@@ -51,7 +69,7 @@
           </div>
 
         <!-- div contenedor de los filtros -->
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <div class="col btn-group btn-group-toggle" data-toggle="buttons">
           
             <button class="btn btn-dark" id="ordAsc" onclick="ordenarPrecio();">
             <i class="fas fa-sort-amount-down-alt"></i> USD</button>
@@ -65,10 +83,10 @@
           </div>
 
         <!-- div contenedor de los filtros de precio definidos -->
-          <div class="col btn-group">
-            <input type="text" id="valMin" placeholder="Precio Minimo 12000">
-            <input type="text" id="valMax" placeholder="Precio Maximo 16000">
-            <button class="btn btn-dark" onclick="filtrar();">Filtrar</button>
+          <div class="col"><input type="text"  style="width: 100%;" id="valMin" placeholder="Minimo 12000">
+            <input type="text"  style="width: 100%;" id="valMax" placeholder="Maximo 16000"></div>
+            <div class="col">
+            <button class="btn btn-dark" style="width: 100%;" onclick="filtrar();">Filtrar</button>
           </div>
         </div>
       </div>

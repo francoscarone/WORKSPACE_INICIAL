@@ -10,10 +10,10 @@ function showProductList(array){
         productos += `<a href= "product-info.html" class="custom-card">
         <div class="list-group-item list-group-item-action">
             <div class="row">
-                <div class="col-3">
-                    <img src="${producto.imgSrc}" alt=" ${producto.description}" class="img-thumbnail">
+                <div class="col-4">
+                    <img src="${producto.imgSrc}" alt="${producto.description}" class="img-fluid">
                 </div>
-                <div class="col">
+                <div class="col-8">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">${producto.name}</h4>
                         <small class="text-muted">${producto.soldCount} artículos</small>

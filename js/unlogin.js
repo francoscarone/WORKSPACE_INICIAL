@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
 if (usuario == null){
       location.href="index.html";
 }
-    document.getElementById('userLog').innerHTML = `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.username} <i class="fas fa-bars"></i>`
+    document.getElementById('userLog').innerHTML = `<img src=${usuario.imagen} height=30px style="border-radius: 100px;"> ${usuario.username}`
 });
