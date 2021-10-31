@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
               <div class="col-sm-3"> Email </div><div class="col-sm-9 mb-3"><input id="emailPerfil" type="email" placeholder="Ingrese un email" style="width: 90%;"></div>
             </div>
             <div class="row">
-              <div class="col-sm-3"> Edad </div><div class="col-sm-9 mb-3"><input id="edadPerfil" type="number" placeholder="Edad" style="width: 90%;"></div>
+              <div class="col-sm-3"> Edad </div><div class="col-sm-9 mb-3"><input id="edadPerfil" type="number" min=1 max=99 placeholder="Edad" style="width: 90%;"></div>
             </div>
             <div class="row">
               <div class="col-sm-3"> Telefono </div><div class="col-sm-9 mb-3"><input id="telefonoPerfil" type="tel" placeholder="000 000 000" style="width: 90%;"></div>
@@ -129,11 +129,8 @@ function cargarDatos(){
   document.getElementById("telefonoPerfil").value = usuario.telefono 
   document.getElementById("profileImage").src = usuario.imagen
 }
-function primerPerfil(){
-  let usuario = JSON.parse( localStorage.getItem("usuario"));
-  document.getElementById("usernamePerfil").value=usuario.username
-  document.getElementById("passwordPerfil").value=usuario.password
-}
+
+
 function guardarDatos(){
   let usuario = JSON.parse( localStorage.getItem("usuario"));
 
@@ -148,6 +145,7 @@ function guardarDatos(){
 
     localStorage.setItem('usuario',JSON.stringify(usuario));
     location.reload();
+
 }
 
 function previewFile() {
@@ -156,12 +154,6 @@ function previewFile() {
   let file    = document.querySelector('input[type=file]').files[0];
   let reader  = new FileReader();
 
-  preview.onchange= function(){
-    if(this.files[0].size>2097152){
-      alert("El tamaño de archivo es muy grande");
-      this.value="";
-    }
-  }
   reader.onloadend = function () {
     preview.src = reader.result; 
     usuario.imagen = reader.result;
@@ -176,3 +168,4 @@ function previewFile() {
     preview.src = "img/userIcon.png";
   }
 }
+
