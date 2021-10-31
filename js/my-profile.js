@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let usuario = JSON.parse( localStorage.getItem("usuario"));
     if (usuario.email != null){
         perfilCargado = "";
-        perfilCargado = `<div class="row">Datos del perfil
+        perfilCargado = `
+        <h2 class="my-perfil"> Mi Perfil </h2>
+        <div class="row">Datos del perfil
         </div>
         <div class="row">
           <!-- imagen -->
@@ -56,7 +58,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         cargarDatos();
     }else{
       perfilCargado = "";
-      perfilCargado =`<div class="row">Configura tu perfil
+      perfilCargado =`
+      <h3 class="my-perfil"> Mi Perfil </h3>
+      <div class="row">Configura tu perfil
       </div>
       <div class="row">
         <!-- imagen -->
@@ -169,6 +173,8 @@ function previewFile() {
     preview.src = "img/userIcon.png";
   }
 }
+
+
 function animeishon(){
   Swal.fire({
     position: 'middle',
