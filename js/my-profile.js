@@ -144,7 +144,8 @@ function guardarDatos(){
     usuario.telefono = document.getElementById("telefonoPerfil").value
 
     localStorage.setItem('usuario',JSON.stringify(usuario));
-    location.reload();
+
+    animeishon();
 
 }
 
@@ -168,4 +169,14 @@ function previewFile() {
     preview.src = "img/userIcon.png";
   }
 }
-
+function animeishon(){
+  Swal.fire({
+    position: 'middle',
+    html: '<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4eth4jy9.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"    autoplay></lottie-player>',
+    title: 'Datos guardados exitosamente!',
+    showConfirmButton: false,
+    timer: 3000,
+  }).then(() => {
+    location.reload();
+  })
+}
