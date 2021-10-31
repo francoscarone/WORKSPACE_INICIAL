@@ -1,4 +1,6 @@
 
+
+/* Estilos imagen de perfil */
 .profile-img {
     border-radius: 50%;
     width:60%;
@@ -9,31 +11,40 @@
     display: block;
   }
 
+  /* Estilos para los botones de editar campo */
   .edit-camp{
     border: none;
     background-color: transparent;
     margin-left: 1%;
   }
+  .edit{
+    color: rgb(23,162,184);
+  }
 
+  /* Estilo para centrar los inputs */
   .center {
     margin-bottom:10%;
     margin-top: 10%;
     display: block;
 }
+
+/* Estilo para centrar el boton de guardar */
 .centerButton{
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
 }
+
+/* Estilos para el input file */
 .fileInput{
+  width:100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
   display: block;
 }
-.edit{
-  color: rgb(23,162,184);
-}
+
+/* Estilo para el nombre sobre la Imagen de usuario */
 .nameUser{
   border-radius: 5%;
   margin-top: 2%;
@@ -42,16 +53,13 @@
   color: aliceblue;
 }
 
-.fileInput{
-  width:100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5%;
-  display: block;
-}
+
+/* Fondo de la pagina */
 body{
   background-color: rgb(0, 110, 253); background-image: url('https://www.transparenttextures.com/patterns/tree-bark.png');
 }
+
+/* Estilos para el titulo principal */
 .my-perfil{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
