@@ -135,9 +135,6 @@ function comprar(){
     alert("Seleccione una forma de pago")
     contador+=1;
   }
-  if(contador>0){
-  alert("Complete los campos de forma de pago")
-  }
   for (let campo of campos) {
     
     if(campo.value.trim()===''){
