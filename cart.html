@@ -33,6 +33,7 @@
     }
   </style>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -104,9 +105,18 @@
             <div class="d-flex justify-content-between align-items-center">
               <span>Detalles de la compra</span>
             </div>
+            <span class="type d-block mt-3 mb-1" style="font-size: 13px;">Forma de pago</span
+              ><label class="radio">
+                <input type="radio" name="formaPago" value="pago1" data-toggle="modal" data-target="#formaPagoModal" onclick="formaPago()"/>
+                <span>Tarjéta de credito</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="formaPago" value="pago2" data-toggle="modal" data-target="#formaPagoModal" onclick="formaPago()"/>
+                <span>Transferencia bancaria</span>
+              </label>
             <span class="type d-block mt-3 mb-1" style="font-size: 13px;">Tipo de envio:</span
             ><label class="radio">
-              <input type="radio" name="card" value="payment1" checked onclick="calcCostoEnvio();" />
+              <input type="radio" name="card" value="payment1" onclick="calcCostoEnvio();" />
               <span>Premium: 2 a 15 dias (15%)</span>
             </label>
             <label class="radio">
@@ -114,19 +124,19 @@
               <span>Express: 5 a 8 dias (7%)</span>
             </label>
             <label class="radio">
-              <input type="radio" name="card" value="payment3" onclick="calcCostoEnvio();" />
+              <input type="radio" name="card" value="payment3" checked onclick="calcCostoEnvio();" />
               <span>Standard: 12 a 15 dias (5%)</span>
             </label>
             <div>
               <label class="credit-card-label">Pais</label>
-              <input 
+              <input id="inPais"
               type="text"
               class="form-control credit-inputs"             
             />
             </div>
             <div>
               <label class="credit-card-label">Ciudad</label>
-              <input 
+              <input id="inCiudad" 
               type="text"
               class="form-control credit-inputs"             
             />
@@ -135,7 +145,7 @@
             <div class="row">
               <div class="col-md-6">
                 <label class="credit-card-label">Calle</label
-                ><input
+                ><input id="inCalle"
                   type="text"
                   class="form-control credit-inputs"
                 />
@@ -143,14 +153,14 @@
               </div>
               <div class="col-md-6">
                 <label class="credit-card-label">Número</label
-                ><input
+                ><input id="inNumero"  
                   type="text"
                   class="form-control credit-inputs"
                 />
               </div>
               <div class="col-md-6">
                 <label class="credit-card-label">Esquina</label
-                ><input
+                ><input id="inEsquina" 
                   type="text"
                   class="form-control credit-inputs"
                 />
@@ -192,6 +202,54 @@
       <div></div>
     </div>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="formaPagoModal" tabindex="-1" aria-labelledby="formaPagoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formaPagoLabel">Formal de pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="formaPagoBody">
+        <h4>Tarjeta de credito</h4>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5"> Número de Tarjeta: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="numTarjeta" type="text" style="width: 90%;"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5"> Nombre y apellido: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="nombApell" type="text" style="width: 90%;"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5"> Fecha de expiración: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="fechaExp" type="date" style="width: 90%;"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5"> Código de seguridad: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="codSeg" type="text" style="width: 90%;"></div>
+      </div><div class="row">
+        <div class="col-sm-5"> CI del titular: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="cedula" type="text" style="width: 90%;"></div>
+      </div>
+    </div>
+    <h4>Transferencia bancaria</h4>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5"> Número de cuenta: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="numCuenta" type="text" style="width: 90%;"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5"> Nombre y apellido: </div><div class="col-sm-7 mb-3"><input name="camposPago" id="nombApell2" type="text" style="width: 90%;"></div>
+      </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cambiar forma de pago</button>
+        <button type="button" class="btn btn-primary" id="guardarFormaPago" onclick="guardarFormaPago()">Guardar forma de pago</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="js/socialLogin/google.js"></script>
   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
