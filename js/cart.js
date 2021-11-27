@@ -11,7 +11,6 @@ function showCarrito(lista){
             articulo.unitCost=articulo.unitCost/40;
         }
         tabla +=`
-
         <div
               class="
                 d-flex
@@ -103,7 +102,7 @@ function calcCostoEnvio(){
   document.getElementById("subTotal-final").innerText ="USD "+ subTotal_Final.toFixed(2)
 
   // almaceno los tipos de envio en un array
-  let envio = document.getElementsByName("card");
+  let envio = document.getElementsByName("envio");
 
   // analizo el estado de los radio, si estan checkeados aplico el importe seleccionado
     if(envio[0].checked){
@@ -157,49 +156,45 @@ function comprar(){
     
 } 
 
+
+
 // generamos la ventana modal para cada fomra de pago
 function formaPago(){
 // habilito y deshabilito campos en funcion del pago seleccionado
   let radios = document.getElementsByName("formaPago")
   if(radios[0].checked){
-    document.getElementById("numCuenta").disabled=true
-    document.getElementById("nombApell2").disabled=true
+
+    document.getElementById("tarjeta-credito").hidden=false
+    document.getElementById("trans-bancaria").hidden=true
+    document.getElementById("numCuenta").value="deshabilitado"
+    document.getElementById("nombApell2").value="deshabilitado"
     document.getElementById("numTarjeta").value=""
     document.getElementById("nombApell").value=""
     document.getElementById("fechaExp").value=""
-    document.getElementById("cedula").value=""
     document.getElementById("codSeg").value=""
-    document.getElementById("numTarjeta").disabled=false
-    document.getElementById("nombApell").disabled=false
-    document.getElementById("fechaExp").disabled=false
-    document.getElementById("cedula").disabled=false
-    document.getElementById("codSeg").disabled=false
-    document.getElementById("numCuenta").value="deshabilitado"
-    document.getElementById("nombApell2").value="deshabilitado"
+    document.getElementById("cedula").value=""
    
   }
   if(radios[1].checked){
-    document.getElementById("numCuenta").value=""
-    document.getElementById("nombApell2").value=""
-    document.getElementById("numTarjeta").disabled=true
-    document.getElementById("nombApell").disabled=true
-    document.getElementById("fechaExp").disabled=true
-    document.getElementById("codSeg").disabled=true
-    document.getElementById("cedula").disabled=true
+    
+    document.getElementById("tarjeta-credito").hidden=true
+    document.getElementById("trans-bancaria").hidden=false
     document.getElementById("numTarjeta").value="deshabilitado"
     document.getElementById("nombApell").value="deshabilitado"
     document.getElementById("fechaExp").value='0001-01-01'
     document.getElementById("codSeg").value="deshabilitado"
     document.getElementById("cedula").value="deshabilitado"
-    document.getElementById("numCuenta").disabled=false
-    document.getElementById("nombApell2").disabled=false
+
+    document.getElementById("numCuenta").value=""
+    document.getElementById("nombApell2").value=""
+   
   }
 }
 
 // validamos la forma de pago
 
 function guardarFormaPago(){
- 
+  let radios = document.getElementsByName("formaPago");
 
   // comprobamos si hay campos vacios, si los hay, 
   // aumentamos el contador y resaltamos los campos que deban rellenarse
@@ -212,6 +207,26 @@ function guardarFormaPago(){
     contador+=1;
   }else{
     camposDePago[i].className="form-control is-valid"
+    if(radios[0].checked){
+      let tarjeta =`
+      <input name="numTarjeta" type="hidden" value="${document.getElementById("numTarjeta").value}">
+      <input name="nombre-apellido" type="hidden" value="${document.getElementById("nombApell").value}">
+      <input name="fechaExp" type="hidden" value="${document.getElementById("fechaExp").value}">
+      <input name="codigoSeguridad" type="hidden" value="${document.getElementById("codSeg").value}">
+      <input name="cedula" type="hidden" value="${document.getElementById("cedula").value}">
+    `
+      
+    document.getElementById("datosTarjeta").innerHTML= tarjeta
+      
+    }else{
+      let tarjeta =`
+      <input name="numCuenta" type="hidden" value="${document.getElementById("numCuenta").value}">
+      <input name="nombre-apellido" type="hidden" value="${document.getElementById("nombApell2").value}">
+     
+      `
+      document.getElementById("datosTarjeta").innerHTML= tarjeta
+    
+    }
   }
   }  
 
@@ -237,4 +252,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             calcCostoEnvio();
         }
     });
+
+    
 });
